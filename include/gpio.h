@@ -14,12 +14,12 @@
 #define GPIO_F_ADDRESS (0x48001400)
 
 
-#define GPIO_A ((volatile gpio_t *)GPIO_A_ADDRESS)
-#define GPIO_B ((volatile gpio_t *)GPIO_B_ADDRESS)
-#define GPIO_C ((volatile gpio_t *)GPIO_C_ADDRESS)
-#define GPIO_D ((volatile gpio_t *)GPIO_D_ADDRESS)
-#define GPIO_E ((volatile gpio_t *)GPIO_E_ADDRESS)
-#define GPIO_F ((volatile gpio_t *)GPIO_F_ADDRESS)
+#define GPIO_A ((gpio_t *)GPIO_A_ADDRESS)
+#define GPIO_B ((gpio_t *)GPIO_B_ADDRESS)
+#define GPIO_C ((gpio_t *)GPIO_C_ADDRESS)
+#define GPIO_D ((gpio_t *)GPIO_D_ADDRESS)
+#define GPIO_E ((gpio_t *)GPIO_E_ADDRESS)
+#define GPIO_F ((gpio_t *)GPIO_F_ADDRESS)
 
 
 typedef struct _gpio_t gpio_t;
@@ -47,6 +47,11 @@ struct _gpio_t {
 #define GPIO_SET_PUPD(GPIO, PIN, PUPD) \
   GPIO->PUPDR = (GPIO->PUPDR & ~(0b11 << (PIN * 2))) | (PUPD << (PIN * 2))
 
+#define GPIO_ON(GPIO, PIN) \
+  GPIO->BSRR = (1 << PIN)
+
+#define GPIO_OFF(GPIO, PIN) \
+  GPIO->BRR = (1 << PIN)
 
 /** GPIO port mode register(GPIOx_MODER)
  * offset: 0x0000

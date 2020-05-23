@@ -1,3 +1,6 @@
+/** RM0091 6.4.15 RCC register map p.135
+ */
+
 #ifndef _RCC_H
 #define _RCC_H
 
@@ -218,6 +221,16 @@ struct _rcc_t {
 #define RCC_BDCR_LSERDY (0x00000002)
 #define RCC_BDCR_LSEON  (0x00000001)
 
+// RTC clock source selection
+// No clock
+#define RCC_BDCR_RTCSEL_NO_CLOCK (0x00000000)
+// LSE oscillator clock used as RTC clock
+#define RCC_BDCR_RTCSEL_LSE      (0x00000100)
+// LSI oscillator clock used as RTC clock
+#define RCC_BDCR_RTCSEL_LSI      (0x00000200)
+// HSE oscillator clock divided by 32 used as RTC clock
+#define RCC_BDCR_RTCSEL_HSE      (0x00000300)
+
 
 /** Control/status register(RCC_CSR)
  * offset: 0x0024
@@ -267,6 +280,24 @@ struct _rcc_t {
 #define RCC_CFGR3_CECSW    (0x00000040)
 #define RCC_CFGR3_I2C1SW   (0x00000010)
 #define RCC_CFGR3_USART1SW (0x00000003)
+
+// USART3 clock source selection
+#define RCC_CFGR3_USART3SW_PCLK   (0x00000000)
+#define RCC_CFGR3_USART3SW_SYSCLK (0x00040000)
+#define RCC_CFGR3_USART3SW_LSE    (0x00080000)
+#define RCC_CFGR3_USART3SW_HSI    (0x000c0000)
+
+// USART2 clock source selection
+#define RCC_CFGR3_USART2SW_PCLK   (0x00000000)
+#define RCC_CFGR3_USART2SW_SYSCLK (0x00010000)
+#define RCC_CFGR3_USART2SW_LSE    (0x00020000)
+#define RCC_CFGR3_USART2SW_HSI    (0x00030000)
+
+// USART1 clock source selection
+#define RCC_CFGR3_USART1SW_PCLK   (0x00000000)
+#define RCC_CFGR3_USART1SW_SYSCLK (0x00000001)
+#define RCC_CFGR3_USART1SW_LSE    (0x00000002)
+#define RCC_CFGR3_USART1SW_HSI    (0x00000003)
 
 
 /** Clock control register 2(RCC_RC2)

@@ -14,14 +14,14 @@
 #define USART7_ADDRESS (0x40011800)
 #define USART8_ADDRESS (0x40011c00)
 
-#define USART1 ((volatile usart_t *)USART1_ADDRESS)
-#define USART2 ((volatile usart_t *)USART2_ADDRESS)
-#define USART3 ((volatile usart_t *)USART3_ADDRESS)
-#define USART4 ((volatile usart_t *)USART4_ADDRESS)
-#define USART5 ((volatile usart_t *)USART5_ADDRESS)
-#define USART6 ((volatile usart_t *)USART6_ADDRESS)
-#define USART7 ((volatile usart_t *)USART7_ADDRESS)
-#define USART8 ((volatile usart_t *)USART8_ADDRESS)
+#define USART1 ((usart_t *)USART1_ADDRESS)
+#define USART2 ((usart_t *)USART2_ADDRESS)
+#define USART3 ((usart_t *)USART3_ADDRESS)
+#define USART4 ((usart_t *)USART4_ADDRESS)
+#define USART5 ((usart_t *)USART5_ADDRESS)
+#define USART6 ((usart_t *)USART6_ADDRESS)
+#define USART7 ((usart_t *)USART7_ADDRESS)
+#define USART8 ((usart_t *)USART8_ADDRESS)
 
 
 typedef struct _usart_t usart_t;

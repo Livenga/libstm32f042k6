@@ -7,6 +7,7 @@
 
 #include "nvic.h"
 #include "scb.h"
+#include "flash.h"
 
 #include "systick.h"
 
