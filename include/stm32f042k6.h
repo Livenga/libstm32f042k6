@@ -12,8 +12,10 @@
 #include "systick.h"
 
 #include "rcc.h"
+#include "adc.h"
 #include "gpio.h"
 #include "usart.h"
+#include "spi.h"
 
 
 #endif
